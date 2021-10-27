@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:37:18 by unix              #+#    #+#             */
-/*   Updated: 2021/10/26 18:29:38 by unix             ###   ########.fr       */
+/*   Updated: 2021/10/26 19:08:41 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 
 # define HEX "0123456789ABCDEF"
 
-void	ft_printf(void);
+int	ft_printf(const char *input, ...);
 
 #endif
