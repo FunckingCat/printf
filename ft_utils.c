@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 10:05:38 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 12:04:55 by unix             ###   ########.fr       */
+/*   Updated: 2021/10/28 12:20:44 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_write_hex_lower(unsigned int num, int *res)
 void	ft_write_unsigned_int(unsigned int num, int *res)
 {
 	char	c;
-	
+
 	if (num >= 10)
 		ft_write_unsigned_int(num / 10, res);
 	c = (char)(num % 10 + 48);

@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 18:20:37 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 12:08:41 by unix             ###   ########.fr       */
+/*   Updated: 2021/10/28 12:23:36 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	main(void)
 {
-	char *c;
-	int res;
+	char	*c;
+	int		res;
 
-	c = "ill";
+	c = "12345";
 	c = ft_strdup(c);
 	ft_printf("---------------------\n");
-	res = ft_printf("--> %x <--", UINT_MAX);
+	res = ft_printf("-->_%s_<--", c);
 	ft_printf("\n---------------------\n");
 	printf("res - %d\n", res);
 	return (0);
