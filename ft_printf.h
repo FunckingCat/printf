@@ -6,19 +6,20 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:37:18 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 12:20:30 by unix             ###   ########.fr       */
+/*   Updated: 2021/10/28 13:09:22 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "../libft/libft.h"
 # include <stdarg.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
 
 # define HEXU "0123456789ABCDEF"
 # define HEXD "0123456789abcdef"
-# define FLAGS "cspdiuxX"
 
 int		ft_printf(const char *input, ...);
 
