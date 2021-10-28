@@ -6,7 +6,7 @@
 #    By: unix <unix@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 14:16:17 by tyamcha           #+#    #+#              #
-#    Updated: 2021/10/28 11:26:37 by unix             ###   ########.fr        #
+#    Updated: 2021/10/28 13:01:03 by unix             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,10 +35,12 @@ $(NAME): $(OBJ) $(HEADER)
 	
 clean:
 	make clean -C ./libft
-	/bin/rm -f $(OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	make fclean -C ./libft
+	rm libft.a
+	rm -f $(NAME)
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 10:05:38 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 12:20:44 by unix             ###   ########.fr       */
+/*   Updated: 2021/10/28 12:48:47 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 void	ft_write_hex_ptr(size_t num, int *res)
 {
 	if (num > 15)
-		ft_write_hex_lower(num / 16, res);
+	{
+		ft_write_hex_ptr(num / 16, res);
+	}
 	write(1, &HEXD[num % 16], 1);
 	*res += 1;
 }

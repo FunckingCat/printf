@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 18:24:54 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 12:24:36 by unix             ###   ########.fr       */
+/*   Updated: 2021/10/28 12:54:57 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,8 @@ int	ft_printf(const char *input, ...)
 			write(1, input++, 1);
 		else if (*(input + 1) == '%')
 		{
-			write(1, input, 2);
+			write(1, input + 1, 1);
 			input += 2;
-			len++;
 		}
 		else
 		{
