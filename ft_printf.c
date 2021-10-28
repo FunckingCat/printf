@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 18:24:54 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 11:36:37 by unix             ###   ########.fr       */
+/*   Updated: 2021/10/28 12:02:03 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,10 @@ int	ft_parse_flag(char flag, va_list ap)
 		len = ft_put_pointer(va_arg(ap, size_t));
 	if (flag == 'd' || flag == 'i')
 		len = ft_put_integer(va_arg(ap, int));
-	// if (flag == 'u')
-	// 	len = ft_putstr_fd("unsigned decimal", 1);
-	// if (flag == 'x')
-	// 	len = ft_putstr_fd("hex", 1);
-	// if (flag == 'X')
-	// 	len = ft_putstr_fd("upHex", 1);
+	if (flag == 'u')
+		len = ft_put_unsigned(va_arg(ap, unsigned int));
+	if (flag == 'x' || flag == 'X')
+		len = ft_put_hex(va_arg(ap, unsigned int), flag);
 	return (len);
 }
 

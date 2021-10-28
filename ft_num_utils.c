@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 11:12:20 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 11:52:38 by unix             ###   ########.fr       */
+/*   Updated: 2021/10/28 12:07:18 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int	ft_put_pointer(size_t p)
 	
 	write(1, "0x", 2);
 	len = 2;
-	ft_write_hex_lower(p, &len);
+	ft_write_hex_ptr(p, &len);
 	return (len);
 }
 
 int	ft_put_integer(int num)
 {
-	int				len;
+	int	len;
 	
 	len = 0;
 	if (num == INT_MIN)
@@ -39,5 +39,26 @@ int	ft_put_integer(int num)
 		num = -num;
 	}
 	ft_write_unsigned_int((unsigned int)num, &len);
+	return (len);
+}
+
+int	ft_put_unsigned(unsigned int num)
+{
+	int	len;
+	
+	len = 0;
+	ft_write_unsigned_int((unsigned int)num, &len);
+	return (len);
+}
+
+int	ft_put_hex(unsigned int num, char flag)
+{
+	int	len;
+	
+	len = 0;
+	if (flag == 'X')
+		ft_write_hex_upper(num, &len);
+	if (flag == 'x')
+		ft_write_hex_lower(num, &len);
 	return (len);
 }

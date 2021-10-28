@@ -6,13 +6,21 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 10:05:38 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 11:52:29 by unix             ###   ########.fr       */
+/*   Updated: 2021/10/28 12:04:55 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_write_hex_upper(size_t num, int *res)
+void	ft_write_hex_ptr(size_t num, int *res)
+{
+	if (num > 15)
+		ft_write_hex_lower(num / 16, res);
+	write(1, &HEXD[num % 16], 1);
+	*res += 1;
+}
+
+void	ft_write_hex_upper(unsigned int num, int *res)
 {
 	if (num > 15)
 		ft_write_hex_upper(num / 16, res);
@@ -20,7 +28,7 @@ void	ft_write_hex_upper(size_t num, int *res)
 	*res += 1;
 }
 
-void	ft_write_hex_lower(size_t num, int *res)
+void	ft_write_hex_lower(unsigned int num, int *res)
 {
 	if (num > 15)
 		ft_write_hex_lower(num / 16, res);
