@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_num_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/26 18:20:37 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 11:52:58 by unix             ###   ########.fr       */
+/*   Created: 2021/10/28 11:12:20 by unix              #+#    #+#             */
+/*   Updated: 2021/10/28 11:52:38 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main(void)
+int	ft_put_pointer(size_t p)
 {
-	char *c;
-	int res;
-
-	c = "ill";
-	c = ft_strdup(c);
-	ft_printf("---------------------\n");
-	res = ft_printf("--> %d <--", -2147483647);
-	ft_printf("\n---------------------\n");
-	printf("res - %d\n", res);
-	return (0);
+	int len;
+	
+	write(1, "0x", 2);
+	len = 2;
+	ft_write_hex_lower(p, &len);
+	return (len);
 }
 
-// tet()
-// {
-//     make &&
-//     gcc main.c libftprintf.a libft.a && 
-//     rm *.o &&
-//     ./a.out
-// }
+int	ft_put_integer(int num)
+{
+	int				len;
+	
+	len = 0;
+	if (num == INT_MIN)
+	{
+		write(1, "-2147483648", 11);
+		return (11);
+	}
+	if (num < 0)
+	{
+		write(1, "-", 1);
+		len = 1;
+		num = -num;
+	}
+	ft_write_unsigned_int((unsigned int)num, &len);
+	return (len);
+}

@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/26 18:20:37 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 11:52:58 by unix             ###   ########.fr       */
+/*   Created: 2021/10/28 10:35:13 by unix              #+#    #+#             */
+/*   Updated: 2021/10/28 11:32:23 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main(void)
+int	ft_put_char(int n)
 {
-	char *c;
-	int res;
+	char	c;
 
-	c = "ill";
-	c = ft_strdup(c);
-	ft_printf("---------------------\n");
-	res = ft_printf("--> %d <--", -2147483647);
-	ft_printf("\n---------------------\n");
-	printf("res - %d\n", res);
-	return (0);
+	c = (char)n;
+	write(1, &c, 1);
+	return (1);
 }
 
-// tet()
-// {
-//     make &&
-//     gcc main.c libftprintf.a libft.a && 
-//     rm *.o &&
-//     ./a.out
-// }
+int	ft_put_str(char *s)
+{
+	int	res;
+
+	res = 0;
+	if (!s)
+		return (0);
+	while (*s)
+	{
+		write(1, s++, 1);
+		res++;
+	}
+	return (res);
+}

@@ -6,7 +6,7 @@
 #    By: unix <unix@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 14:16:17 by tyamcha           #+#    #+#              #
-#    Updated: 2021/10/26 18:43:47 by unix             ###   ########.fr        #
+#    Updated: 2021/10/28 11:26:37 by unix             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -c
 
-SRC_FILES = ft_printf.c
+SRC_FILES = ft_printf.c ft_utils.c ft_str_utils.c ft_num_utils.c
 
 OBJ = $(SRC_FILES:.c=.o)
 
