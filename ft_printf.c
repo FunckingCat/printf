@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tyamcha <tyamcha@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 18:24:54 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 12:54:57 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/10 16:45:58 by tyamcha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,18 @@ int	ft_parse_flag(char flag, va_list ap)
 
 	if (flag == 'c')
 		len = ft_put_char(va_arg(ap, int));
-	if (flag == 's')
+	else if (flag == 's')
 		len = ft_put_str(va_arg(ap, char *));
-	if (flag == 'p')
+	else if (flag == 'p')
 		len = ft_put_pointer(va_arg(ap, size_t));
-	if (flag == 'd' || flag == 'i')
+	else if (flag == 'd' || flag == 'i')
 		len = ft_put_integer(va_arg(ap, int));
-	if (flag == 'u')
+	else if (flag == 'u')
 		len = ft_put_unsigned(va_arg(ap, unsigned int));
-	if (flag == 'x' || flag == 'X')
+	else if (flag == 'x' || flag == 'X')
 		len = ft_put_hex(va_arg(ap, unsigned int), flag);
+	else
+		len = 0;
 	return (len);
 }
 
@@ -47,6 +49,8 @@ int	ft_printf(const char *input, ...)
 			write(1, input + 1, 1);
 			input += 2;
 		}
+		else if (*(input + 1) == '\0')
+			write(1, ++input, 1);
 		else
 		{
 			len += ft_parse_flag(*(input + 1), ap) - 1;

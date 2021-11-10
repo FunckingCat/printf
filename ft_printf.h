@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tyamcha <tyamcha@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:37:18 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 13:09:22 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/10 16:37:17 by tyamcha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int		ft_put_pointer(size_t p);
 int		ft_put_integer(int num);
 int		ft_put_unsigned(unsigned int num);
 int		ft_put_hex(unsigned int num, char flag);
+char	*ft_strchr(const char *s, int c);
 
 #endif

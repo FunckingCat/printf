@@ -3,14 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tyamcha <tyamcha@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 10:05:38 by unix              #+#    #+#             */
-/*   Updated: 2021/10/28 13:09:29 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/10 16:37:07 by tyamcha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s)
+	{
+		if (*s == c % 256)
+			return ((char *)s);
+		s++;
+	}
+	if (*s == c % 256)
+		return ((char *)s);
+	return (NULL);
+}
 
 void	ft_write_hex_ptr(size_t num, int *res)
 {
